@@ -37,7 +37,7 @@ class GossipsController < ApplicationController
 	  	flash[:success] = "C'est dommage que t'assumes pas... mais supprimé !"
 	  	redirect_to root_path
 	else
-		flash[:danger] = "Nope, ça n'est pas ton gossip petit malin !"
+		  flash[:danger] = "Nope, ça n'est pas ton gossip petit malin !"
 	  	redirect_to root_path
 	end
   end

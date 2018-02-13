@@ -1,7 +1,11 @@
 <h2>Rentre un gossip</h2>
 
-<%= form_tag("/gossips/new", method: "post") do %>
-  <%= label_tag(:content, "Mets-nous du croustillant :") %>
-  <%= text_field_tag(:content) %>
-  <%= submit_tag("Balance tes potes") %>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag("/gossips/new", method: "post") do %>
+      <%= label_tag(:content, "Balance du lourd !") %>
+      <%= text_area_tag(:content) %>
+      <%= submit_tag("Balance tes potes") %>
+    <% end %>
+  </div>
+</div>
