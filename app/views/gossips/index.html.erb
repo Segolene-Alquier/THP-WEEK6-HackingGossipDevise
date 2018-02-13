@@ -1,14 +1,22 @@
-<h1>Tous les gossips</h1>
+<h1>Tous les gossips (aïe, aïe, aïe)</h1>
+    </br>
+  <div class="liste_gossips">
+    <ul class="gossips">
+      <% @gossip.each do |goss| %>
+        <li>
+          Gossip #<%= goss.id %> •
+          Créé le <%= goss.created_at %> •
+          Par <%= goss.user_id %> •
+          <%=link_to "Contenu", gossip_path(goss) %> •
+          <%=link_to "Supprimer", gossip_path(goss), method: :delete %>
 
-<ul class="gossips">
-  <% @gossip.each do |goss| %>
-    <li>
-      Gossip #<%= goss.id %> •
-      Créé le <%= goss.created_at %> •
-      Par <%= goss.user_id %> •
-      <%=link_to "Contenu", gossip_path(goss) %> •
-      <%=link_to "Supprimer", gossip_path(goss), method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
-    </li>
-  <% end %>
-</ul>
+  <div class="gif">
+    <p>
+      <iframe src="https://giphy.com/embed/3o7buk66tfb1DT0VUY" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/woman-neon-lips-3o7buk66tfb1DT0VUY"></a></p>
+    </p>
+  </div>

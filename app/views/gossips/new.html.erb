@@ -2,9 +2,6 @@
 
 <%= form_tag("/gossips/new", method: "post") do %>
   <%= label_tag(:content, "Mets-nous du croustillant :") %>
-  </br>
   <%= text_field_tag(:content) %>
-  </br>
-  </br>
   <%= submit_tag("Balance tes potes") %>
 <% end %>
