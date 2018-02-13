@@ -1,0 +1,13 @@
+<h2>Rentre un gossip</h2>
+
+<%= form_for(:gossip) do |f| %>
+
+  <div class="field">
+    <%= f.label :contenu %><br />
+    <%= f.text_area :content, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Balance tes potes !" %>
+  </div>
+<% end %>

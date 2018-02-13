@@ -1,0 +1,14 @@
+<h1>Tous les gossips</h1>
+
+<ul class="gossips">
+  <% @gossip.each do |goss| %>
+    <li>
+      Gossip #<%= goss.id %> •
+      Créé le <%= goss.created_at %> •
+      Par <%= goss.user_id %> •
+      <%=link_to "Son contenu", gossips_show_path(goss)%> •
+      <%=link_to "Supprimer", "#" %>
+
+    </li>
+  <% end %>
+</ul>
