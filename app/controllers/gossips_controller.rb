@@ -30,29 +30,14 @@ class GossipsController < ApplicationController
     @gossip = Gossip.find(params[:id])
   end
 
-  def update
-    @gossip = Gossip.find(params[:id])
-    if @gossip.user == current_user
-	  	if @gossip.update
-	  		flash[:success] = "Ok, updated!!"
-	  		redirect_to root_path
-	    else
-	    	render "dit"
-	    end
-    else
-    	flash[:danger] = "Don't touch it!"
-    	redirect_to root_path
-	  end
-  end
-
   def destroy
     @gossip = Gossip.find(params[:id])
-  	if @gossip.user == current_user
+  	if @gossip.user_id == current_user.id
 	  	@gossip.destroy
-	  	flash[:success] = "Ok, deleted!!"
+	  	flash[:success] = "C'est dommage que t'assumes pas... mais supprimé !"
 	  	redirect_to root_path
 	else
-		flash[:danger] = "Don't touch it!"
+		flash[:danger] = "Nope, ça n'est pas ton gossip petit malin !"
 	  	redirect_to root_path
 	end
   end
