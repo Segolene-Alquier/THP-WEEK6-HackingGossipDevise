@@ -6,8 +6,8 @@
       Gossip #<%= goss.id %> •
       Créé le <%= goss.created_at %> •
       Par <%= goss.user_id %> •
-      <%=link_to "Son contenu", gossips_show_path(goss)%> •
-      <%=link_to "Supprimer", "#" %>
+      <%=link_to "Contenu", gossip_path(goss) %> •
+      <%=link_to "Supprimer", gossip_path(goss), method: :delete %>
 
     </li>
   <% end %>

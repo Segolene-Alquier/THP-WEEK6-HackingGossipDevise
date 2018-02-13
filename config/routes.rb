@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
-  get 'gossips/index'
+  get 'home/index'
 
-  get 'gossips/new'
+  get 'users/new', to: 'users#new'
 
-  get 'gossips/create'
+  resources :gossips
 
-  get 'gossips/show'
+  post 'gossips/new', to: 'gossips#create'
+  #get 'gossips/index'
 
-  root 'gossips#new'
+  #get 'gossips/new'
+  #post 'gossips/new'
+
+  #get 'gossips/create'
+  #post 'gossips/create'
+
+  #get 'gossips/show'
+  root 'gossips#index'
+  get 'home/warning', to: 'home#warning'
   devise_for :users
 end

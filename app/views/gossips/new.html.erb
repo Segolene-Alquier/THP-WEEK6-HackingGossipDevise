@@ -1,13 +1,10 @@
 <h2>Rentre un gossip</h2>
 
-<%= form_for(:gossip) do |f| %>
-
-  <div class="field">
-    <%= f.label :contenu %><br />
-    <%= f.text_area :content, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Balance tes potes !" %>
-  </div>
+<%= form_tag("/gossips/new", method: "post") do %>
+  <%= label_tag(:content, "Mets-nous du croustillant :") %>
+  </br>
+  <%= text_field_tag(:content) %>
+  </br>
+  </br>
+  <%= submit_tag("Balance tes potes") %>
 <% end %>

@@ -18,8 +18,19 @@
         <%= link_to "gossipàgogo", root_path, id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Créer un gossip", gossips_new_path %></li>
-            <li><%= link_to "Log in", new_user_session_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Créer un gossip", gossips_new_path %></li>
+              <li>
+                <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to 'Se connecter', new_user_session_path %>
+              </li>
+              <li>
+                <%= link_to "S'inscrire", new_user_registration_path %>
+              </li>
+            <% end %>
           </ul>
         </nav>
       </div>
