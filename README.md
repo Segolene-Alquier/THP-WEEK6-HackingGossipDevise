@@ -4,14 +4,20 @@
 
 * l'app en ligne sur heroku : https://radiant-caverns-27981.herokuapp.com
 * le code promo pour s'inscrire : "petitcurieux"
+* pour les tests : ```rails test '/user_test.rb'```. Ils vérifient que :
+    * à l'inscription, l'uilisateur est renvoyé vers la liste des gossips
+    * l'index des gossips affiche bien tous les gossips, mais lorsque l'utilisateur est connecté via le code promo seulement
+    * le créateur d'un gossip peut le supprimer
+    * un utilisateur peut bien s'enregistrer avec le code promo
+    * pour pouvoir s'inscrire : le mail doit être unique et obligatoire + username obligatoire
 
 > tout fonctionne bien normalement 🎈
 
 ## Les consignes 📚
-Faire un site qui permettra aux matelots de poster des gossips de manière anonyme. 
+Faire un site qui permettra aux matelots de poster des gossips de manière anonyme.
 La page d'accueil du site doit être :
 * un warning qui dit : "Hey bro connecte-toi ou inscris-toi !" si la personne n'est pas logguée
-*la liste de tous les gossips si la personne est login
+* la liste de tous les gossips si la personne est login
 
 Une fois login/signup, l'utilisateur est redirigé vers la liste de tous les gossips. Dans cet index, tu pourras retrouver une liste de tous les gossips, avec la date d'ajout, le username de la personne qui a posté le gossip, et un lien pour supprimer le gossip si l'auteur est login.
 
