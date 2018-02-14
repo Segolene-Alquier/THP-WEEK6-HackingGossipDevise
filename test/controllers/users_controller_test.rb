@@ -3,13 +3,13 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
     include Devise::Test::IntegrationHelpers
     def setup
-        @user = User.create(username: "Mathieu", email: "user@example.com", password: "azerty")
+        @user = User.create(username: "Sego", email: "sego@example.com", password: "motdepasse")
     end
 
     test "should redirect to index if logged in" do
         @user.save
         get root_path
-        post new_user_session_path, params: { user: { email:    'user@example.com', password:"azerty"
+        post new_user_session_path, params: { user: { email: "sego@example.com", password: "motdepasse"
                                                     }}
         assert_redirected_to root_path
     end
@@ -18,7 +18,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
         #Register a new user
         get new_user_registration_path
-        post user_registration_path, params: { user: { username: "Mathieu", email: "user@example.com", password: "azerty"
+        post user_registration_path, params: { user: { username: "Sego", email: "sego@example.com", password: "motdepasse"
                                                      }}
         #Signing in after register
         sign_in(@user)
@@ -32,7 +32,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
 
     test "gossip page should display all gossips when logged_in with the code" do
-        @user = User.create(username: "Mathieu", email: "user@example.com", password: "azerty", code: "THP2018")
+        @user = User.create(username: "Sego", email: "sego@example.com", password: "motdepasse", code: "petitcurieux")
 
         sign_in(@user)
         get gossips_path
@@ -43,7 +43,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     test "a user should be able to delete his gossips" do
         get new_user_session_path
-        post new_user_session_path, params: { user: { username: "Mathieu", email: "user@example.com", code: "THP2018", password: "azerty"
+        post new_user_session_path, params: { user: { username: "Sego", email: "sego@example.com", password: "motdepasse", code: "petitcurieux"
                                                     }}
         #Counting the number of button
         #it should be equal to the number of user id 1 here since the user is Mathieu
@@ -52,7 +52,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     test "a user without the code should not be able see the gossips" do
         get new_user_session_path
-        post new_user_session_path, params: { user: { username: "Mathieu", email: "user@example.com", password: "azerty"
+        post new_user_session_path, params: { user: { username: "Sego", email: "sego@example.com", password: "motdepasse"
                                                     }}
         #Counting the number of content
         #it should be equal to 0
@@ -61,7 +61,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     test "a user should be able to subscribe with the code" do
         get new_user_registration_path
-        post user_registration_path, params: { user: { username: "Mathieu", code: "THP2018", email: "user@example.com", password: "azerty"
+        post user_registration_path, params: { user: { username: "Sego", email: "sego@example.com", password: "motdepasse", code: "petitcurieux"
                                                      }}
         #Signing in after register
         sign_in(@user)
