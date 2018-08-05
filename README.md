@@ -1,5 +1,7 @@
 # The Hacking Gossip sur Rails avec la gem Devise
 
+![Gossip](https://nsa39.casimages.com/img/2018/08/05/18080510054168495.png)
+
 ## Comment tester ? 🤔
 
 * l'app en ligne sur heroku : https://radiant-caverns-27981.herokuapp.com
